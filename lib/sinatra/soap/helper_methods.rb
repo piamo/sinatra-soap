@@ -18,8 +18,8 @@ module Sinatra
       end
 
       def get_wsdl
-        if defined?(settings.wsdl_path)
-          path = File.join(settings.public_folder, settings.wsdl_path)
+        if defined?(settings.wsdl_file)
+          path = File.join(settings.public_folder, settings.wsdl_file)
           if File.exist?(path)
             File.read(path)
           else

@@ -17,7 +17,7 @@ module Sinatra
     def self.registered(app)
       app.helpers Soap::HelperMethods
 
-      app.set :wsdl_route, '/wsdl' unless defined?(app.settings.wsdl_path)
+      app.set :wsdl_route, '/wsdl' unless defined?(app.settings.wsdl_route)
       app.set :namespace, 'http://schemas.xmlsoap.org/wsdl/' unless defined?(app.settings.namespace)
       app.set :endpoint, '/action' unless defined?(app.settings.endpoint)
       app.set :service, 'Sinatra' unless defined?(app.settings.service)
