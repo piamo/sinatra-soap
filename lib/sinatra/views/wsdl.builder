@@ -34,7 +34,7 @@ xml.definitions 'xmlns' => 'http://schemas.xmlsoap.org/wsdl/',
   end
 
   xml.binding :name => "#{settings.service}_binding", :type => "tns:#{settings.service}_port" do
-    xml.tag! "soap:binding", :style => 'document', :transport => 'http://schemas.xmlsoap.org/soap/http'
+    xml.tag! "soap:binding", :style => 'rpc', :transport => 'http://schemas.xmlsoap.org/soap/http'
     wsdl.keys.each do |operation|
       xml.operation :name => operation do
         xml.tag! "soap:operation", :soapAction => operation
